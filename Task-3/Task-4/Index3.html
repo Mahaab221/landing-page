@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>My Simple Landing Page</title>
+  <meta name="description" content="A simple, responsive landing page ready for GitHub Pages." />
+  <link rel="stylesheet" href="styles1.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="#">
+        <div class="logo" aria-hidden="true">M</div>
+        <div>
+          <div style="font-weight:700">MyWebsite</div>
+          <div class="small muted" style="margin-top:3px">Simple • Fast • Responsive</div>
+        </div>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <a href="#features">Features</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a class="cta" href="#get-started">Get started</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div>
+          <h1 id="hero-title" class="title">A clean, responsive landing page — ready for GitHub Pages</h1>
+          <p>
+            Lightweight, accessible, and easy to customize. Drop your content in, push to GitHub, and
+            publish with GitHub Pages for a free static site.
+          </p>
+
+          <div class="buttons" aria-hidden="false">
+            <a class="cta" href="#get-started">Deploy to GitHub Pages</a>
+            <a class="btn" href="#features">See features</a>
+          </div>
+
+          <div style="margin-top:18px" class="small muted">
+            Tip: name this file <code>index.html</code> and push to the `main` branch (root) for GitHub Pages.
+          </div>
+        </div>
+
+        <aside class="card" aria-labelledby="status">
+          <h3 id="status" style="margin:0 0 6px 0">Status</h3>
+          <p class="small muted" style="margin:0 0 12px 0">This demo is static — no server required.</p>
+
+          <dl style="display:grid;gap:10px">
+            <div>
+              <dt class="small muted">Performance</dt>
+              <dd style="margin:4px 0 0 0;font-weight:600">Fast (static)</dd>
+            </div>
+            <div>
+              <dt class="small muted">Accessibility</dt>
+              <dd style="margin:4px 0 0 0;font-weight:600">Basic semantic markup</dd>
+            </div>
+            <div>
+              <dt class="small muted">Responsive</dt>
+              <dd style="margin:4px 0 0 0;font-weight:600">Yes — mobile friendly</dd>
+            </div>
+          </dl>
+        </aside>
+      </section>
+
+      <section id="features" aria-labelledby="features-title">
+        <h2 id="features-title" style="margin:0 0 14px 0">Features</h2>
+        <div class="features">
+          <article class="feature" aria-labelledby="f1">
+            <h4 id="f1">Responsive layout</h4>
+            <p>Works on phones, tablets and desktop screens without changes.</p>
+          </article>
+
+          <article class="feature" aria-labelledby="f2">
+            <h4 id="f2">Easy to customize</h4>
+            <p>Single file CSS — tweak fonts, colors and sections quickly.</p>
+          </article>
+
+          <article class="feature" aria-labelledby="f3">
+            <h4 id="f3">Accessible</h4>
+            <p>Semantic tags, clear headings, and readable contrast.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="about" style="margin-top:8px;">
+        <h2 style="margin-bottom:10px">About</h2>
+        <p class="muted">
+          This sample is intended as a starting point for deploying a static website with GitHub Pages.
+          You can replace text, add images (put them in an /assets folder), or split CSS into a separate file.
+        </p>
+      </section>
+
+      <section id="contact" style="margin-top:22px;">
+        <h2 style="margin-bottom:10px">Contact</h2>
+
+        <form onsubmit="event.preventDefault(); alert('Form demo — no server connected.');" class="card" style="max-width:640px;">
+          <label style="display:block;margin-bottom:10px">
+            <div class="small muted">Your name</div>
+            <input required name="name" type="text" aria-label="Your name"
+                   style="width:100%;padding:10px;margin-top:6px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit" />
+          </label>
+
+          <label style="display:block;margin-bottom:10px">
+            <div class="small muted">Email</div>
+            <input required name="email" type="email" aria-label="Your email"
+                   style="width:100%;padding:10px;margin-top:6px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit" />
+          </label>
+
+          <label style="display:block;margin-bottom:12px">
+            <div class="small muted">Message</div>
+            <textarea name="message" rows="4" aria-label="Message"
+                      style="width:100%;padding:10px;margin-top:6px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit"></textarea>
+          </label>
+
+          <div style="display:flex;gap:10px;align-items:center">
+            <button type="submit" class="cta" style="border:none">Send message</button>
+            <div class="small muted">Demo only — form uses client-side alert.</div>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <div class="small muted">© <span id="year"></span> MyWebsite — Built for GitHub Pages</div>
+      <div class="small muted">Instructions: push <code>index.html</code> to <code>main</code> branch & enable Pages</div>
+    </footer>
+  </div>
+
+  <script>
+    // tiny script: set year + smooth hash scrolling for one-page demo
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Smooth scrolling for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        const id = a.getAttribute('href').slice(1);
+        if(!id) return;
+        const el = document.getElementById(id);
+        if(el){
+          e.preventDefault();
+          el.scrollIntoView({behavior:'smooth',block:'start'});
+        }
+      });
+    });
+  </script>
+</body>
+</html>
